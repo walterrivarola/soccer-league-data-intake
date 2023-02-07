@@ -1,0 +1,2 @@
+-- CARGAR EN LA TABLA EL ARCHIVO 'premier_positions.csv.gz' DE SNOWFLAKE EN FORMATO CSV
+copy into {{params.table}} from @{{params.stage}}/premier_positions.csv.gz FILE_FORMAT=(TYPE=csv field_delimiter=',' skip_header=1) ON_ERROR='CONTINUE';
